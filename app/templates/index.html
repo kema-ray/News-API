@@ -6,6 +6,7 @@
          <img src="{{item_articles.urlToImage}}" alt="">
     {% endfor %}
 </ul> -->
+{% import 'macros.html' as macro %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,24 +18,27 @@
 <body>
     <h3>Health Articles</h3>
 <ul>
-    {% for health_article in health %}
+    {{ macro.displayArticleList(health)}}
+    <!-- {% for health_article in health %}
          <li>{{ health_article.title }}</li>
          <p>{{ health_article.description }}</p>
-    {% endfor %}
+    {% endfor %} -->
 </ul>
 <h3>Technology Articles</h3>
 <ul>
-    {% for technology_article in technology %}
+    {{ macro.displayArticleList(technology)}}
+    <!-- {% for technology_article in technology %}
          <li>{{ technology_article.title }}</li>
          <p>{{ technology_article.description }}</p>
-    {% endfor %}
+    {% endfor %} -->
 </ul>
 <h3>Business Articles</h3>
 <ul>
-    {% for business_article in technology %}
+    {{ macro.displayArticleList(business)}}
+    <!-- {% for business_article in business %}
          <li>{{ business_article.title }}</li>
          <p>{{ business_article.description }}</p>
-    {% endfor %}
+    {% endfor %} -->
 </ul>
 </body>
 </html>
