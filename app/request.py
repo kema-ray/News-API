@@ -21,9 +21,28 @@ def get_articles(category):
 
     return article_results
 
+def get_article(name):
+    get_article_details_url = base_url.format(name,api_key)
+    with urllib.request.urlopen(get_article_details_url) as url:
+        article_details_data = url.read()
+        article_details_response = json.loads(article_details_data)
+        article_object = None
+        if article_details_response:
+            name = article_details_response('name')
+            author = article_details_response('author')
+            description=article_details_response('description')
+            publishedAt = article_details_response('publisedAt')
+            url = article_details_response('url')
+            urlToImage = article_details_response('urlToImage')
+            title = article_details_response('title')
+
+            article_object = Article(name,author,description,publishedAt,url,urlToImage,title)
+
+    return article_object        
 def process_results(article_list):
     article_result = []
     for item in article_list:
+        name = item.get('name')
         author = item.get('author')
         description = item.get('description')
         publishedAt = item.get('publishedAt')
@@ -32,6 +51,6 @@ def process_results(article_list):
         title = item.get('title')
 
         if author:
-            articles_object = Article(author,description,publishedAt,url,urlToImage,title)
+            articles_object = Article(name,author,description,publishedAt,url,urlToImage,title)
             article_result.append(articles_object)
     return article_result         
