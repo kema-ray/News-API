@@ -1,8 +1,40 @@
-<h3>Health Articles</h3>
+<!-- <h3>Health Articles</h3>
 <ul>
     {% for item_articles in health %}
          <li>{{ item_articles.title }}</li>
          <p>{{ item_articles.description }}</p>
          <img src="{{item_articles.urlToImage}}" alt="">
     {% endfor %}
+</ul> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+</head>
+<body>
+    <h3>Health Articles</h3>
+<ul>
+    {% for health_article in health %}
+         <li>{{ health_article.title }}</li>
+         <p>{{ health_article.description }}</p>
+    {% endfor %}
 </ul>
+<h3>Technology Articles</h3>
+<ul>
+    {% for technology_article in technology %}
+         <li>{{ technology_article.title }}</li>
+         <p>{{ technology_article.description }}</p>
+    {% endfor %}
+</ul>
+<h3>Business Articles</h3>
+<ul>
+    {% for business_article in technology %}
+         <li>{{ business_article.title }}</li>
+         <p>{{ business_article.description }}</p>
+    {% endfor %}
+</ul>
+</body>
+</html>
