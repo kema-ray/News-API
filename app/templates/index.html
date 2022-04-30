@@ -1,44 +1,17 @@
-<!-- <h3>Health Articles</h3>
-<ul>
-    {% for item_articles in health %}
-         <li>{{ item_articles.title }}</li>
-         <p>{{ item_articles.description }}</p>
-         <img src="{{item_articles.urlToImage}}" alt="">
-    {% endfor %}
-</ul> -->
+{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Website</title>
-</head>
-<body>
+
+{% block content%}
     <h3>Health Articles</h3>
-<ul>
-    {{ macro.displayArticleList(health)}}
-    <!-- {% for health_article in health %}
-         <li>{{ health_article.title }}</li>
-         <p>{{ health_article.description }}</p>
-    {% endfor %} -->
-</ul>
-<h3>Technology Articles</h3>
-<ul>
-    {{ macro.displayArticleList(technology)}}
-    <!-- {% for technology_article in technology %}
-         <li>{{ technology_article.title }}</li>
-         <p>{{ technology_article.description }}</p>
-    {% endfor %} -->
-</ul>
-<h3>Business Articles</h3>
-<ul>
-    {{ macro.displayArticleList(business)}}
-    <!-- {% for business_article in business %}
-         <li>{{ business_article.title }}</li>
-         <p>{{ business_article.description }}</p>
-    {% endfor %} -->
-</ul>
-</body>
-</html>
+    <ul>
+        {{ macro.displayArticleList(health)}}
+    </ul>
+    <h3>Technology Articles</h3>
+    <ul>
+        {{ macro.displayArticleList(technology)}}
+    </ul>
+    <h3>Business Articles</h3>
+    <ul>
+        {{ macro.displayArticleList(business)}}
+    </ul>
+{% endblock %}
