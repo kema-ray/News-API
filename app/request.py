@@ -1,3 +1,4 @@
+from concurrent.futures import process
 from app import app
 import urllib.request, json
 from .models import articles
@@ -39,7 +40,20 @@ def get_article(name):
 
             article_object = Article(name,author,description,content,publishedAt,url,urlToImage,title)
 
-    return article_object        
+    return article_object
+def get_category(cat_name):
+    get_category_url = base_url.format(cat_name,api_key)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data =url.read()
+        get_category_response = json.loads(get_category_data)
+
+        category_results = None
+
+        if get_category_response['articles']:
+            category_results_list = get_category_response['articles']
+            category_results = process_results(category_results_list)
+
+    return category_results   
 def process_results(article_list):
     article_result = []
     for item in article_list:

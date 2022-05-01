@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for category in category %}
+<h1>{{cat}} NEWS</h1>
+    <div>
+        <img src="{{category.urlToImage}}" alt="">
+        <div class="card-body">
+            <h3 class="card-title">{{category.title}}</h3>
+            <p class="card-text">{{category.description}}</p>
+            <p>Author-{{category.author}}</p>
+            <p class="card-text text-primary">{{category.publishedAt}}</p>
+            <a href="{{category.url}}" class="card-text text-decoration-none">
+                <div class="col-6 d-grid gap-2 " style="padding-bottom:20px">
+                    <button class="btn btn-outline-success btn-lg" type="button">Read More</button>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
