@@ -2,20 +2,22 @@
 {% import 'macros.html' as macro %}
 
 {% block content%}
-    <h3>Entertainment Articles</h3>
+    <!-- <h3 style="text-align: center;">Political Articles</h3>
     <ul>
-        {{ macro.displayArticleList(entertainment)}}
-    </ul>
-    <h3>Health Articles</h3>
-    <ul>
-        {{ macro.displayArticleList(health)}}
-    </ul>
-    <h3>Technology Articles</h3>
-    <ul>
-        {{ macro.displayArticleList(technology)}}
-    </ul>
-    <h3>Business Articles</h3>
-    <ul>
-        {{ macro.displayArticleList(business)}}
-    </ul>
+        {{ macro.displayArticleList(political)}}
+    </ul> -->
+    <div  style="max-width:100rem; margin-left:auto; margin-right:auto; overflow: hidden; padding-top:50px; z-index: 0;">
+        <h3>Health Articles</h3>
+        <ul>
+            {{ macro.displayArticleList(health)}}
+        </ul>
+        <h3>Technology Articles</h3>
+        <ul>
+            {{ macro.displayArticleList(technology)}}
+        </ul>
+        <h3>Business Articles</h3>
+        <ul>
+            {{ macro.displayArticleList(business)}}
+        </ul>
+    </div>
 {% endblock %}
