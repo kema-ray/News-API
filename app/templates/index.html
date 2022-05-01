@@ -2,6 +2,10 @@
 {% import 'macros.html' as macro %}
 
 {% block content%}
+    <h3>Entertainment Articles</h3>
+    <ul>
+        {{ macro.displayArticleList(entertainment)}}
+    </ul>
     <h3>Health Articles</h3>
     <ul>
         {{ macro.displayArticleList(health)}}

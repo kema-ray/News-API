@@ -31,12 +31,13 @@ def get_article(name):
             name = article_details_response('name')
             author = article_details_response('author')
             description=article_details_response('description')
+            content = article_details_response('content')
             publishedAt = article_details_response('publisedAt')
             url = article_details_response('url')
             urlToImage = article_details_response('urlToImage')
             title = article_details_response('title')
 
-            article_object = Article(name,author,description,publishedAt,url,urlToImage,title)
+            article_object = Article(name,author,description,content,publishedAt,url,urlToImage,title)
 
     return article_object        
 def process_results(article_list):
@@ -45,12 +46,13 @@ def process_results(article_list):
         name = item.get('name')
         author = item.get('author')
         description = item.get('description')
+        content = item.get('content')
         publishedAt = item.get('publishedAt')
         url = item.get('url')
         urlToImage = item.get('urlToImage')
         title = item.get('title')
 
         if author:
-            articles_object = Article(name,author,description,publishedAt,url,urlToImage,title)
+            articles_object = Article(name,author,description,content,publishedAt,url,urlToImage,title)
             article_result.append(articles_object)
     return article_result         
