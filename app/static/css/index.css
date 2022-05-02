@@ -1,5 +1,8 @@
- 
-    /* background-color:; */
+*{
+    background-image: url(https://images.unsplash.com/photo-1492573637402-25691cd9eac2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGRhcmslMjBiYWNrZ3JvdW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+    
+}
+
 .dropdown-menu {
     background-color: #1e1e21;
 }

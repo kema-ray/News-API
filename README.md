@@ -30,6 +30,8 @@ The user would be able to:
 * cd News-API
 * code . or atom . depending on the text editor being used.
 
+## Deployment environment
+* Heroku
 
 ## Known bugs
 * There are no bugs currently. The application works as expected.
