@@ -1,15 +1,18 @@
-from concurrent.futures import process
-from app import app
+# from app import app
 import urllib.request, json
-from .models import articles
+from .models import Article,Category
 
-Article = articles.Article
+api_key = None
+base_url = None
 
-api_key = app.config['NEWS_API_KEY']
-base_url = app.config['NEWS_API_BASE_URL']
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
 
 def get_articles(category):
     get_articles_url = base_url.format(category,api_key)
+    print(get_articles_url)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)

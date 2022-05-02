@@ -24,3 +24,4 @@ class TestArticle(unittest.TestCase):
         self.assertEqual(self.articles_object.url,'https://www.engadget.com/beats-fit-pro-studio-buds-airpods-sale-131544330.html')
         self.assertEqual(self.articles_object.urlToImage,'https://s.yimg.com/os/creatr-uploaded-images/2022-04/8b62a350-c7b8-11ec-a5af-d26c5ceedf70')
         self.assertEqual(self.articles_object.title,'Beats Fit Pro are on sale for $180 right now')
+        
