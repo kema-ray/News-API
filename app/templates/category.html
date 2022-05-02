@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for category in category %}
-<h1 class="text-uppercase" style="text-align: center;">{{cat}} NEWS</h1>
-    <div style="max-width:100rem; margin-left:auto; margin-right:auto; overflow: hidden; padding-top:50px; z-index: 0;">
-        <img src="{{category.urlToImage}}" style="box-shadow: 10px 10px 7px 12px lightblue;" alt="">
-        <div class="card-body">
-            <h3 class="card-title">{{category.title}}</h3>
-            <p class="card-text">{{category.description}}</p>
-            <p>Author-{{category.author}}</p>
-            <p class="card-text text-primary">{{category.publishedAt}}</p>
-            <a href="{{category.url}}" class="card-text text-decoration-none">
-                <div class="col-6 d-grid gap-2 " style="padding-bottom:20px">
-                    <button class="btn btn-outline-success btn-lg" type="button">Read More</button>
-                </div>
-            </a>
+<div style="background-color: #334155;">
+    <!-- <h1 class="text-uppercase" style="text-align: center; font-size: larger;">{{cat}} NEWS</h1> -->
+        <div style="max-width:100rem; margin-left:auto; margin-right:auto; overflow: hidden; padding-top:50px; z-index: 0;">
+            <img src="{{category.urlToImage}}" alt="">
+            <div class="card-body">
+                <h3 class="card-title" style="color: #d1d5db;">{{category.title}}</h3>
+                <p class="card-text" style="color: #d1d5db;">{{category.description}}</p>
+                <p style="color: #d1d5db;">Author-{{category.author}}</p>
+                <p class="card-text text-primary">{{category.publishedAt}}</p>
+                <a href="{{category.url}}" class="card-text text-decoration-none">
+                    <div class="col-6 d-grid gap-2 " style="padding-bottom:20px">
+                        <button class="btn btn-outline-success btn-lg" type="button">Read More</button>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
+</div>
 {% endfor %}
 {% endblock %}

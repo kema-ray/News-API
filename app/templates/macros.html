@@ -1,7 +1,7 @@
 {% macro displayArticleList(article_list) %}
 {% for article in article_list %}
 <div>
-    <img src="{{article.urlToImage}}" alt="" style="box-shadow: 10px 10px 7px 12px lightblue;">
+    <img src="{{article.urlToImage}}" alt="">
     <div class="card-body">
         <h3 class="card-title" style="color: aliceblue;">{{article.title}}</h3>
         <p class="card-text" style="color: aliceblue;">{{article.description}}</p>

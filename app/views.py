@@ -5,10 +5,11 @@ from .request import get_articles,get_article, get_category
 
 @app.route('/') #localhost:5000
 def index():
+    general_articles = get_articles('general')
     health_articles = get_articles('health')
     technology_articles = get_articles('technology')
     business_articles = get_articles('business')
-    return render_template('index.html',health = health_articles,business = business_articles,technology = technology_articles)
+    return render_template('index.html',general=general_articles,health = health_articles,business = business_articles,technology = technology_articles)
 
 @app.route('/category/<cat_name>')
 def category(cat_name):
