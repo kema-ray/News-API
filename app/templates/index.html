@@ -7,26 +7,11 @@
 {% endblock %}
 
 {% block content%}
-    <!-- <h3 style="text-align: center;">Political Articles</h3>
-    <ul>
-        {{ macro.displayArticleList(political)}}
-    </ul> -->
+    
     <div  style="max-width:100rem; margin-left:auto; margin-right:auto; overflow: hidden; padding-top:50px; z-index: 0;">
-        <h2 style="font-weight: bold; color: aqua;">General Articles</h2>
+        <h2 style="font-weight: bold; color: aqua;">Trending Articles</h2>
         <ul>
             {{ macro.displayArticleList(general)}}
         </ul>
-        <!-- <h2 style="font-weight: bold; color: aqua;">Health Articles</h2>
-        <ul>
-            {{ macro.displayArticleList(health)}}
-        </ul>
-        <h2 style="font-weight: bold; color: aqua;">Technology Articles</h2>
-        <ul>
-            {{ macro.displayArticleList(technology)}}
-        </ul>
-        <h2 style="font-weight: bold; color: aqua;">Business Articles</h2>
-        <ul>
-            {{ macro.displayArticleList(business)}}
-        </ul> -->
     </div>
 {% endblock %}
